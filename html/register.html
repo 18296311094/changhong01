@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="../css/changhong.css">
+</head>
+
+<body>
+    <input type="hidden" id="livemode" value="1">
+    <input type="hidden" id="service" value="http://cn.changhong.com/ec/cshop/index.php?act=login&amp;op=gologincl&amp;return_url=aHR0cDovL2NuLmNoYW5naG9uZy5jb20vZWMvY3Nob3AvaW5kZXgucGhwP2FjdD1jYXJ0Jm9wPWluZGV4">
+    <input type="hidden" id="view" value="gw">
+    <div class="headerDiv">
+        <img class="logoImg" src="https://cdn.chiq-cloud.com/passport/pc/image/logo.jpg">
+        <div class="spaceLine"></div>
+        <div class="proNameDiv">欢迎注册</div>
+        <span style="float: right; font-size: 13px; color: #1c94f2; margin-right: 30px; margin-top: 10px; cursor: pointer;" onclick="loginSpanClicked()">请登录</span> <span style="float: right; font-size: 13px; margin-top: 10px; color: #b2b2b2">已有账号？</span>
+    </div>
+    <div class="stepTopDiv">
+        <div id="headerStep1Div" class="heightlightDivColor">
+            <img src="https://cdn.chiq-cloud.com/passport/pc/image/register_ico_1_focus.png"><span class="numberSpan">1</span><span>验证手机</span>
+        </div>
+        <div id="headerStep2Div" class="normalDivColor">
+            <img src="https://cdn.chiq-cloud.com/passport/pc/image/register_ico_2_normal.png"><span class="numberSpan">2</span><span>设置密码</span>
+        </div>
+        <div id="headerStep3Div" class="normalDivColor">
+            <img src="https://cdn.chiq-cloud.com/passport/pc/image/register_ico_3_normal.png" alt=""><span class="numberSpan">3</span><span>注册成功</span>
+        </div>
+    </div>
+    <div class="contentDiv">
+        <div id="step1Div" style="display: block">
+            <div id="accountDiv" class="inputTopDiv">
+                <input class="loginInput" placeholder="请输入手机号码" id="phone" maxlength="11">
+            </div>
+            <div id="accountTipsDiv" class="tipsDiv"></div>
+            <div id="verifiCodeDiv" class="inputTopDiv" style="display: block">
+                <input class="loginInput verifiCodeInput" placeholder="短信验证码" id="smsCode" maxlength="6">
+                <button id="getVerifiCodeBtn" class="getVerifiCodeBtn" onclick="getAuthCode()">获取验证码</button>
+            </div>
+            <div id="passwordTipsDiv" class="tipsDiv"></div>
+            <div class="stepBtnTopDiv">
+                <button class="stepBtn" onclick="stepBtnClicked()" id="nextBtn">下一步</button>
+            </div>
+            <div style="width: 380px; margin: 0px auto; margin-top: 10px;">
+                <img id="checkId" src="https://cdn.chiq-cloud.com/passport/pc/image/ok.png" alt="" style="float: left; width: 15px; margin-right: 10px; margin-top: 2px; cursor: pointer;" onclick="selectImgClicked()"> <span style="font-size: 13px; float: left;">我已阅读并接受</span>                <span style="font-size: 13px; float: left; color: #e90000; cursor: pointer;" onclick="userSe()">&nbsp;版权声明、</span><span style="font-size: 13px; float: left; color: #e90000; cursor: pointer;" onclick="userDe()">隐私保护&nbsp;</span>
+                <span style="font-size: 13px; float: left;"> 条款</span>
+            </div>
+        </div>
+        <div id="step2Div" style="display: none">
+            <div class="inputTopDiv">
+                <input class="loginInput" placeholder="请输入密码" type="password" maxlength="16" id="password">
+            </div>
+            <div id="passwordTips" class="tipsDiv"></div>
+            <div class="inputTopDiv">
+                <input class="loginInput" placeholder="请输入确认密码" type="password" maxlength="16" id="rePassword">
+            </div>
+            <div id="rePasswordTips" class="tipsDiv"></div>
+            <div style="position: relative; margin: 5px auto 0px auto; width: 380px; height: 40px;">
+                <span style="font-size: 13px;">密码长度8~16位，数字、字母、字符至少包含两种</span>
+            </div>
+            <div class="stepBtnTopDiv">
+                <button class="stepBtn" onclick="submitBtnClicked()" id="confirmBtn">提交</button>
+            </div>
+        </div>
+        <div id="step3Div" style="text-align: center; display: none">
+            <img src="https://cdn.chiq-cloud.com/passport/pc/image/successful.png" alt="" style="width: 60px; margin-top: 50px"> <span style="font-size: 18px; display: block; margin-top: 10px; margin-bottom: 20px;">
+				通行证注册已成功！</span> <span style="font-size: 13px; color: #666666;">如浏览器没有自动跳转，</span>
+            <span style="font-size: 13px; color: #1c94f2; cursor: pointer;" onclick="loginSpanClicked()">请手动点击！</span>
+        </div>
+    </div>
+
+    <div id="dialogTopDivID" class="dialogTopDiv">
+        <div class="dialogContentDiv">
+            <div style="margin: 10px; margin-bottom: 0px; height: 20px; line-height: 20px">
+                <span style="font-size: 13px; color: #1c94f2">安全验证</span> <img src="https://cdn.chiq-cloud.com/passport/pc/image/close.png" onclick="closeImgClicked()" alt="" style="width: 10px; float: right; padding-top: 5px; cursor: pointer;">
+            </div>
+            <div id="codeDiv" style="padding: 2%; height: 210px;"></div>
+            <span onclick="changeImgClicked()" style="font-size: 13px; color: #1c94f2; float: right; margin: 10px; cursor: pointer; text-decoration: underline">换一张</span>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function loginSpanClicked() {
+            if ($("#view").val() === "form") {
+                history.go(-1)
+            } else {
+                window.location = "login.do?service=http://cn.changhong.com/ec/cshop/index.php?act=login&amp;op=gologincl&amp;return_url=aHR0cDovL2NuLmNoYW5naG9uZy5jb20vZWMvY3Nob3AvaW5kZXgucGhwP2FjdD1jYXJ0Jm9wPWluZGV4&livemode=1&view=gw"
+            }
+            //
+
+        }
+
+        function selectImgClicked() {
+            if ($("#checkId").attr("src").indexOf("normal") > 0) {
+                $("#checkId").attr("src", "https://cdn.chiq-cloud.com/passport/pc/image/ok.png");
+            } else {
+                $("#checkId")
+                    .attr("src", "https://cdn.chiq-cloud.com/passport/pc/image/ok_normal.png");
+            }
+        }
+
+        function werifiCodeBtnClicked() {
+            $('#dialogTopDivID').css("display", "block");
+        }
+
+        function userSe() {
+            window.location = "https://cdn.chiq-cloud.com/passport/user-se.html"
+        }
+
+        function userDe() {
+            window.location = "https://cdn.chiq-cloud.com/passport/user-de.html"
+        }
+
+        function stepBtnClicked() {
+            if (!isPhone($("#phone").val())) {
+                $("#accountTipsDiv").html("请输入正确的手机号");
+                $("#phone").focus();
+                return;
+            }
+
+            if ($("#smsCode").val().length != 6) {
+                $("#passwordTipsDiv").html("请输入正确验证码");
+                $("#smsCode").focus();
+                return;
+            } else if ($("#checkId").attr("src").indexOf("normal") > 0) {
+                $("#passwordTipsDiv").html("请勾选注册协议");
+                return;
+            } else {
+                $.ajax({
+                    url: "verifyAuthCode.do",
+                    type: "post",
+                    async: false,
+                    data: {
+                        username: $("#phone").val(),
+                        livemode: $("#livemode").val(),
+                        service: $("#service").val(),
+                        authCode: $("#smsCode").val()
+                    },
+                    success: function(data) {
+                        if (data) {
+                            showStep2Div();
+                        } else {
+                            $("#passwordTipsDiv").html("请输入正确验证码");
+                            $("#smsCode").focus();
+                        }
+                    }
+                });
+            }
+        }
+
+        function showStep2Div() {
+            $('#step1Div').css("display", "none");
+            $('#step2Div').css("display", "block");
+            $('#headerStep2Div').addClass('heightlightDivColor');
+            $('#headerStep2Div').children("img").attr("src",
+                "https://cdn.chiq-cloud.com/passport/pc/image/register_ico_2_focus.png");
+        }
+
+        function submitBtnClicked() {
+            //账号密码登录
+            if ($("#password").val().length == 0) {
+                $("#passwordTips").html("请输入密码");
+                $("#password").focus();
+                return;
+            }
+            if (checkPass($("#password").val()) < 2) {
+                $("#passwordTips").html("密码复杂度不够");
+                $("#password").focus();
+                return;
+            }
+
+            if ($("#rePassword").val().length == 0) {
+                $("#rePasswordTips").html("请输入确认密码");
+                $("#rePassword").focus();
+                return;
+            }
+            if ($("#rePassword").val() != $("#password").val()) {
+                $("#rePasswordTips").html("两次密码不一致");
+                $("#rePassword").focus();
+                return;
+            }
+            if (flag) {
+                return;
+            } else {
+                flag = true;
+                load($("#confirmBtn"));
+            }
+            $.ajax({
+                url: "regist.do",
+                type: "post",
+                data: {
+                    username: $("#phone").val(),
+                    password: $("#password").val(),
+                    livemode: $("#livemode").val(),
+                    service: $("#service").val(),
+                    authCode: $("#smsCode").val()
+                },
+                success: function(data) {
+                    flag = false;
+                    $("#confirmBtn").html("提交");
+                    if (data.success) {
+                        showStep3Div();
+                        setTimeout(function() {
+                            //window.location = "login.do?service=http://cn.changhong.com/ec/cshop/index.php?act=login&amp;op=gologincl&amp;return_url=aHR0cDovL2NuLmNoYW5naG9uZy5jb20vZWMvY3Nob3AvaW5kZXgucGhwP2FjdD1jYXJ0Jm9wPWluZGV4&livemode=1&view=gw"
+                            loginSpanClicked();
+                        }, 3000);
+                    } else {
+                        $("#rePasswordTips").html(data.msg + "或验证码已过期");
+                    }
+                }
+            });
+        }
+
+        function showStep3Div() {
+            $('#step2Div').css("display", "none");
+            $('#step3Div').css("display", "block");
+            $('#headerStep3Div').addClass('heightlightDivColor');
+            $('#headerStep3Div').children("img").attr("src",
+                "https://cdn.chiq-cloud.com/passport/pc/image/register_ico_3_focus.png");
+        }
+
+        function closeImgClicked() {
+            $('#dialogTopDivID').css("display", "none");
+        }
+
+        //行为验证方法
+        function getVerifiCode(callback) {
+            $('#dialogTopDivID').css("display", "block");
+            if (xwCodeObj) {
+                xwCodeObj.refresh();
+            } else {
+                xwCodeObj = $('#codeDiv').pointsVerify({
+                    imgPre: "https://cdn.chiq-cloud.com/passport",
+                    defaultNum: 4, //默认的文字数量
+                    checkNum: 2, //校对的文字数量
+                    vSpace: 5, //间隔
+                    imgName: ['1.jpg', '2.jpg'],
+                    imgSize: {
+                        width: '96%',
+                        height: '60%',
+                    },
+                    barSize: {
+                        width: '100%',
+                        height: '15%',
+                    },
+                    ready: function() {},
+                    success: function(clickPosStr, randId) {
+                        callback(clickPosStr, randId);
+                        //隐藏行为验证码框
+                        closeImgClicked()
+                        invokeSettime('#getVerifiCodeBtn');
+                    },
+                    error: function() {
+                        //alert('验证失败！');
+                    }
+
+                });
+            }
+        }
+
+        function invokeSettime(obj) {
+            var countdown = 60;
+            settime(obj);
+
+            function settime(obj) {
+                if (countdown == 0) {
+                    $(obj).attr("disabled", false);
+                    $(obj).css("background-color", "#ffffff");
+                    $(obj).text("获取验证码");
+                    countdown = 60;
+                    return;
+                } else {
+                    $(obj).attr("disabled", true);
+                    $(obj).css("background-color", "#e8e8e8");
+                    $(obj).text("(" + countdown + ") s 重新获取");
+                    countdown--;
+                }
+                setTimeout(function() {
+                    settime(obj)
+                }, 1000);
+            }
+        }
+        $("#phone").keyup(function() {
+            if (isPhone($("#phone").val())) {
+                // ajax判断账号是否存在
+                $.ajax({
+                    url: "isExisted.do",
+                    type: "post",
+                    async: false,
+                    data: {
+                        phone: $("#phone").val(),
+                        livemode: $("#livemode").val()
+                    },
+                    success: function(data) {
+                        if (data == "true") {
+                            $('#nextBtn').attr("onclick", "");
+                            $('#getVerifiCodeBtn').attr("disabled", true);
+                            $("#accountTipsDiv").html("账号已存在");
+                        } else {
+                            $('#nextBtn').attr("onclick", "stepBtnClicked()");
+                            $('#getVerifiCodeBtn').attr("disabled", false);
+                            $("#accountTipsDiv").html("");
+                        }
+                    }
+                });
+
+            } else {
+                $("#accountTipsDiv").html("请输入正确的手机号");
+                $("#phone").focus();
+            }
+        });
+        $("#smsCode").keyup(function() {
+            if ($("#smsCode").val().length == 6) {
+                $("#passwordTipsDiv").html("");
+            }
+        });
+        $("#password").keyup(function() {
+            if (checkPass($("#password").val()) < 2) {
+                $("#passwordTips").html("密码复杂度不够");
+                $("#password").focus();
+            } else {
+                $("#passwordTips").html("");
+            }
+        });
+        $("#rePassword").keyup(function() {
+            if ($("#rePassword").val() != $("#password").val()) {
+                $("#rePasswordTips").html("两次密码不一致");
+                $("#rePassword").focus();
+            } else {
+                $("#rePasswordTips").html("");
+            }
+        });
+
+        function closeImgClicked() {
+            $('#dialogTopDivID').css("display", "none");
+        }
+
+        function checkPass(s) {
+            if (s.length < 8) {
+                return 0;
+            }
+            var ls = 0;
+            if (s.match(/([a-z])+/)) {
+                ls++;
+            }
+            if (s.match(/([0-9])+/)) {
+                ls++;
+            }
+            if (s.match(/([A-Z])+/)) {
+                ls++;
+            }
+            if (s.match(/[~'!@#￥$%^&*()-+_=:]+/)) {
+                ls++;
+            }
+            return ls
+        }
+        $(document).keydown(function(event) {
+            if (event.keyCode == 13) {
+                submitBtnClicked();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,699 @@
+    /* 头部横幅图片 */
+    
+    .top-banner img {
+        width: 100%;
+        height: 60px;
+    }
+    /* 头部一级导航  */
+    /* 背景色 */
+    
+    .top-nav {
+        width: 100%;
+        height: 35px;
+        background: black;
+    }
+    /* 居中 */
+    
+    .auto {
+        width: 1200px;
+        height: 35px;
+        margin: auto;
+        background: black;
+    }
+    /* 左边盒子 */
+    
+    .auto .left li {
+        float: left;
+        background: black;
+        color: aliceblue;
+        text-align: center;
+        line-height: 35px;
+        width: 145px;
+    }
+    /* 右边盒子 */
+    
+    .auto .rigth>li {
+        float: left;
+        background: black;
+        color: aliceblue;
+        text-align: center;
+        line-height: 35px;
+        width: 120px;
+        /* position: relative; */
+    }
+    /* 鼠标悬停 */
+    
+    .rigth>li:hover {
+        background: gray;
+        color: aliceblue;
+    }
+    
+    .left>li:hover {
+        background: gray;
+        color: aliceblue;
+    }
+    /* 登录 注册 背景色 */
+    
+    .rigth .red:hover {
+        background: black;
+    }
+    /* 登录 注册 字体色 */
+    
+    .red a:hover {
+        color: red;
+    }
+    /* 头部二级导航框的大小和颜色 */
+    
+    .top-subnav {
+        position: absolute;
+        display: none;
+        /* display: none; */
+        width: 50px;
+        height: 50px;
+        background: #fdfcfc;
+        width: 230px;
+        height: 225px;
+        top: 35px;
+        left: 0;
+    }
+    /* 隐藏二级导航框 */
+    
+    .rigth>li:hover .top-subnav {
+        display: block;
+    }
+    
+    .rigth>li:hover .erwei {
+        display: block;
+    }
+    /* 二级导航框的宽 高*/
+    
+    .top {
+        width: 230px;
+        height: 225px;
+        background: #fdfcfc;
+    }
+    /* 二级导航框的图标 */
+    
+    .top img {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin: 15px 0 0 30px;
+    }
+    /* 二级导航框第一个盒子里大p标签的字体 */
+    
+    .top .da {
+        display: block;
+        width: 180px;
+        height: 16px;
+        padding-top: 10px;
+    }
+    
+    .top .da a {
+        font-size: 16px;
+        color: blue;
+    }
+    /* 二级导航框第一个盒子的i标签的字体 */
+    
+    .top .xiao {
+        display: block;
+        padding-top: 6px;
+        width: 160px;
+        left: -40px;
+    }
+    
+    .top .xiao a {
+        font-size: 13px;
+        color: blue;
+    }
+    /* 二级导航框第一个盒子的p标签的字体颜色 鼠标悬停 */
+    
+    .top .da a:hover {
+        color: red
+    }
+    /* 二级导航框第一个盒子的i标签的字体颜色 鼠标悬停 */
+    
+    .top .xiao a:hover {
+        color: red
+    }
+    /* 二级导航框第二个盒子 */
+    
+    .top-1-auto>li>i {
+        padding: 0 15px;
+        color: black;
+    }
+    
+    .top-1-auto>li>a {
+        color: black;
+    }
+    
+    .top-1-auto>li>a:hover {
+        color: red;
+    }
+    
+    .top-1-auto>li {
+        padding: 0 30px;
+        text-align: left;
+    }
+    /* 虹创有品  鼠标悬停二维码 */
+    
+    .erwei {
+        width: 230px;
+        height: 230px;
+        display: none;
+        position: absolute;
+        top: 35px;
+    }
+    
+    .er {
+        position: relative;
+        display: block;
+    }
+    /* 头部页底 */
+    
+    .botton-auto {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+    }
+    
+    .botton-auto_1 {
+        height: 78px;
+        width: 18.9%;
+        margin-left: 50px;
+    }
+    
+    .top-subnav1 {
+        height: 78px;
+        width: 50%;
+        margin-right: 150px;
+    }
+    
+    .top-subnav1 ul li.subnav-li {
+        float: left;
+        width: 14.27%;
+        text-align: center;
+        line-height: 78px;
+        font-size: 16px;
+        cursor: pointer;
+        position: inherit;
+    }
+    
+    .top-subnav1 ul.subnav-li-ul li {
+        float: left;
+    }
+    
+    .top-subnav1 ul li.subnav-li:hover .subnav-li-ul {
+        display: block;
+    }
+    
+    .top-subnav1 ul li.subnav-li:hover a {
+        color: #f00;
+    }
+    
+    .botton-auto_3 {
+        width: 16%;
+        height: 61px;
+        margin: 0 auto;
+        padding-top: 17px;
+    }
+    
+    .botton-auto_3 #changhong_input {
+        width: 165px;
+        height: 38px;
+        margin: 0 auto;
+        line-height: 78px;
+    }
+    
+    .subnav-li-ul {
+        display: none;
+        width: 100%;
+        height: 230px;
+        background: #fff;
+        position: absolute;
+        left: 0px;
+        border-top: 1px solid #9b9999;
+    }
+    
+    .subnav-li-ul>li {
+        width: 20%;
+    }
+    
+    .subnav-li-ul>li img {
+        border-right: 1px solid #9b9999;
+        width: 133px;
+        height: 133px;
+    }
+    
+    .subnav-li-ul>li>p {
+        text-align: center;
+        line-height: 19px;
+        height: 19px;
+    }
+    
+    .subnav-li-ul>li>em {
+        height: 19px;
+    }
+    /**********轮播图************/
+    
+    .banner {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        border: 1px solid orange;
+        margin: 10px auto;
+        overflow: hidden;
+    }
+    
+    .banner ul {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    
+    .banner ul li {
+        float: left;
+    }
+    
+    .banner ul li img {
+        z-index: -9999;
+    }
+    
+    .banner ol {
+        position: absolute;
+        width: 180px;
+        height: 20px;
+        left: 50%;
+        margin-left: -90px;
+        bottom: 20px;
+    }
+    
+    .banner ol li {
+        float: left;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #000;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    
+    .banner ol li.active {
+        background: rgb(227, 227, 240);
+    }
+    /* 轮播图上的二级导航 */
+    
+    .bg-nav {
+        width: 226px;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        left: 150px;
+        background: #66ff66;
+    }
+    /**************楼层*****************/
+    
+    html,
+    body {
+        width: 100%;
+    }
+    
+    #loutinav {
+        width: 35px;
+        position: fixed;
+        top: 100px;
+        left: 50px;
+        border: 1px solid #ddd;
+        display: none;
+    }
+    
+    #loutinav ul li {
+        width: 35px;
+        height: 32px;
+        border-bottom: 1px dotted #DDDDDD;
+        list-style: none;
+        font-size: 12px;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+        padding: 10px 0;
+        background: #918888;
+        color: #fff;
+    }
+    
+    #loutinav ul li span {
+        width: 35px;
+        height: 32px;
+        padding: 10px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    #loutinav ul li.last {
+        background: #5e4a4a;
+        color: #fff;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    #loutinav ul li.active span {
+        background: #c00;
+        color: #fff;
+        display: block;
+    }
+    
+    #loutinav ul li:hover span {
+        background: #c00;
+        color: #fff;
+        display: block;
+    }
+    
+    #main {
+        width: 1000px;
+        background: #66ff66;
+        margin: 0 auto;
+    }
+    
+    #main .louti {
+        height: 600px;
+        width: 1000px;
+        font-size: 50px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        line-height: 600px;
+    }
+    
+    #footer {
+        width: 1000px;
+        height: 400px;
+        background: red;
+        margin: 0 auto;
+        font-size: 50px;
+        line-height: 400px;
+        text-align: center;
+        color: #000;
+    }
+    
+    .floor-title {
+        width: 1000px;
+        height: 30px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .floor-title-lt {
+        width: 240px;
+        height: 30px;
+        float: left;
+    }
+    
+    .floor-title-lt span {
+        line-height: 30px;
+        padding: 0 50px 0 20px;
+    }
+    
+    .floor-title-rf {
+        float: right;
+    }
+    
+    .floor-title-rf ul li {
+        float: left;
+        margin-left: 33px;
+        line-height: 30px;
+        height: 30px;
+    }
+    /* 数据渲染 */
+    
+    .louti li {
+        float: left;
+        padding: 20px 20px 0 20px;
+        border: 1px solid #ccc;
+        color: #6c6c6c;
+        width: 196px;
+        height: 312px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 5px 5px 0;
+    }
+    
+    .louti li span:nth-of-type(5) {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    /************* 网页底部 **************/
+    
+    .footer {
+        width: 100%;
+        height: 564px;
+        background: #dddddd;
+    }
+    /* 居中 */
+    
+    .top-center {
+        width: 1200px;
+        background: #9b9999;
+        margin: 0 auto;
+    }
+    
+    .top-center div {
+        float: left
+    }
+    /* 第一个大div */
+    
+    .footer-sh {
+        height: 115px;
+        background: #dddddd;
+        border-bottom: 1px solid #666666;
+    }
+    
+    .footer-sh div {
+        float: left;
+        padding-top: 17px
+    }
+    /* 小div1 */
+    
+    .footer-sh1 {
+        width: 200px;
+        height: 80px;
+        background: #dddddd;
+        margin-right: 270px;
+        padding: 20px 0 0 30px;
+    }
+    
+    .footer-sh1 img {
+        padding-right: 10px;
+        padding-top: 5px;
+    }
+    
+    .footer-sh1 h1 {
+        font-size: 18px;
+        padding-bottom: 5px;
+    }
+    
+    .footer-sh1 p {
+        font-size: 14px;
+    }
+    /* 第二个小div居中 */
+    
+    .footer-auto {
+        width: 200px;
+        height: 80px;
+        background: #dddddd;
+        margin-right: 270px;
+        padding: 20px 0 0 30px;
+    }
+    
+    .footer-auto img {
+        padding-right: 10px;
+        padding-top: 5px;
+    }
+    
+    .footer-auto h1 {
+        font-size: 18px;
+        padding-bottom: 5px;
+    }
+    
+    .footer-auto p {
+        font-size: 14px;
+    }
+    /* 第三个小div */
+    
+    .footer-right {
+        width: 200px;
+        height: 80px;
+        background: #dddddd;
+        padding-top: 20px
+    }
+    
+    .footer-right img {
+        padding-right: 10px;
+        padding-top: 5px;
+    }
+    
+    .footer-right h1 {
+        font-size: 18px;
+        padding-bottom: 5px;
+    }
+    
+    .footer-right p {
+        font-size: 14px;
+    }
+    /* 页底第二大盒子 */
+    
+    .footer-bottom {
+        width: 1200px;
+        height: 225px;
+        margin: 0 auto;
+        background: #dddddd;
+    }
+    
+    .footer-bottom1 {
+        width: 425px;
+        height: 200px;
+        background: #dddddd;
+    }
+    
+    .footer-bottom1 ul {
+        float: left;
+        padding: 30px 0 0 30px;
+    }
+    
+    .footer-bottom1 ul li {
+        height: 30px;
+    }
+    
+    .footer-bottom1 ul li a {
+        font-size: 12px;
+        color: #999999;
+    }
+    
+    .footer-title {
+        line-height: 16px;
+        font-size: 16px;
+        color: #333333;
+        padding-bottom: 15px;
+    }
+    /* 页底第二个小盒子 */
+    
+    .footer-bottom2 {
+        width: 186px;
+        background: #dddddd;
+        padding-top: 28px;
+    }
+    
+    .footer-bottom2 ul li a {
+        font-size: 12px;
+        color: #999999;
+    }
+    
+    .footer-bottom2 ul li {
+        height: 30px;
+    }
+    
+    .lf {
+        float: left;
+    }
+    
+    .rt {
+        float: right;
+    }
+    
+    .help-title {
+        font-size: 16px;
+        padding-bottom: 17px;
+    }
+    
+    .clearfix {
+        width: 185px;
+        border-top: 1px solid black;
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    .foot-shopping p {
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    
+    .foot-shopping p a {
+        color: #333333;
+    }
+    
+    .foot-shopping .rt {
+        padding-left: 55px;
+    }
+    /* 第三个小盒子 */
+    
+    .footer-bottom3 {
+        width: 228px;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        margin-top: 25px;
+        margin-left: 50px;
+    }
+    
+    .footer-bottom3 li {
+        width: 100px;
+        height: 20px;
+        margin-top: 25px;
+        margin-left: 30px;
+    }
+    
+    .footer-bottom3 img {
+        display: inline-block;
+        margin-top: 5px;
+    }
+    
+    .footer-bottom3 a {
+        line-height: 20px;
+        padding-left: 10px;
+    }
+    
+    .footer-bottom3 h1 {
+        font-size: 20px;
+        margin-left: 30px
+    }
+    /* 第四个小盒子 */
+    
+    .help-code {
+        width: 285px;
+        height: 151px;
+        padding-left: 20px;
+        margin-top: 30px;
+        background: #dddddd
+    }
+    
+    .help-code-rt {
+        padding-left: 30px;
+    }
+    
+    .help-code p {
+        padding-left: 25px;
+    }
+    /* 页面注册 */
+    
+    .headerDiv {
+        position: relative;
+        margin: 0px;
+        width: 100%;
+        background: #ffffff;
+        height: 60px;
+        line-height: 60px;
+        display: block;
+    }
+    
+    .logoImg {
+        float: left;
+        margin: 17px 0px 17px 40px;
+        height: 26px;
+    }
+    
+    .spaceLine {
+        float: left;
+        width: 1px;
+        height: 30px;
+        margin: 15px;
+        background: #c9c9c9;
+    }
